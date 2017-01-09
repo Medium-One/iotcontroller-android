@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mediumone.iotcontroller.ProfileActivity"
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways" >
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/widgets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:src="@drawable/ic_settings_white_24dp"
+        android:id="@+id/settings"
+        android:layout_gravity="bottom|start"
+        app:fabSize="normal"
+        app:layout_behavior=".FABBehavior"/>
+
+    <LinearLayout
+        android:id="@+id/addmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:layout_gravity="bottom|end"
+        android:orientation="vertical"
+        android:layout_marginBottom="85dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/gps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end"
+            >
+
+            <TextView
+                android:id="@+id/gpslabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:clipToPadding="false"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="GPS"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/gpsbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_gps_fixed_white_24dp"
+                app:fabSize="mini"
+                android:elevation="6dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/onoff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end"
+            >
+
+            <TextView
+                android:id="@+id/onofflabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="Switch"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/onoffbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_power_settings_new_white_24dp"
+                app:fabSize="mini"
+                android:elevation="6dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/slider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end">
+
+            <TextView
+                android:id="@+id/sliderlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="Slider"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/sliderbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ray_vertex_white_24dp"
+                app:fabSize="mini"
+                android:elevation="6dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/json"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end"
+
+            >
+
+            <TextView
+                android:id="@+id/jsonlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="JSON"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/jsonbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_code_braces_white_24dp"
+                app:fabSize="mini"
+                android:elevation="6dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/gauge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end"
+
+            >
+
+            <TextView
+                android:id="@+id/gaugelabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="Gauge"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/gaugebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_speedometer_white_24dp"
+                app:fabSize="mini"
+                android:elevation="6dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end"
+
+            >
+
+            <TextView
+                android:id="@+id/loglabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="Log"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/logbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_format_align_left_white_24dp"
+                app:fabSize="mini"
+                android:elevation="6dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end"
+            >
+
+            <TextView
+                android:id="@+id/maplabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:text="Map"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/mapbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location_on_white_24dp"
+                app:fabSize="mini"
+                android:elevation="6dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:paddingEnd="24dp"
+            android:visibility="invisible"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_gravity="end"
+            >
+
+            <TextView
+                android:id="@+id/notificationlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="5dip"
+                android:background="@drawable/label"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:text="Notification"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/notificationbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_announcement_white_24dp"
+                app:fabSize="mini"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:src="@drawable/ic_add_white_24dp"
+        android:id="@+id/add"
+        app:fabSize="normal"
+        app:layout_behavior=".FABBehavior"
+    android:layout_gravity="bottom|end" />
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,117 @@
+<android.support.v4.view.ViewPager
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewPager"
+    android:layout_width="match_parent"
+    android:overScrollMode="never"
+    android:layout_height="160dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/primaryContentCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/widgetname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_speedometer_grey600_24dp"/>
+
+            <com.hookedonplay.decoviewlib.DecoView
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:layout_width="100dp"
+                android:id="@+id/gauge"
+                custom:dv_arc_gravity_horizontal="Fill"
+                custom:dv_arc_gravity_vertical="Fill"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_height="100dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
+            <TextView 
+                android:id="@+id/gauge_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tag"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/secondaryContentFrameLayout"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/editrange"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_speedometer_grey600_24dp"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content" />
+            <ImageButton
+                android:id="@+id/editstream"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_shuffle_variant_grey600_24dp"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content" />
+            <ImageButton
+                android:id="@+id/edittag"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_local_offer_grey_600_24dp"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content" />
+            <ImageButton
+                android:id="@+id/remove"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_delete_grey_600_24dp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.view.ViewPager>
